@@ -1,0 +1,97 @@
+<h5><span class="badge badge-light ">{{company._id}}</span> -> {{company.name}}</h5>
+<div [hidden]="submitted">
+    <form #detailCompanyForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required
+        [(ngModel)]="company.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+            First Name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" required
+        [(ngModel)]="company.address" name="address" #address="ngModel">
+        <div [hidden]="address.valid || address.pristine"
+              class="alert alert-danger">
+            Address is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="zipCode">Zip Code</label>
+        <input type="number" class="form-control" id="zipCode" required
+        [(ngModel)]="company.zipCode" name="zipCode" #zipCode="ngModel">
+        <div [hidden]="zipCode.valid || zipCode.pristine"
+             class="alert alert-danger">
+             Zip Code is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" required
+        [(ngModel)]="company.city" name="city" #city="ngModel">
+        <div [hidden]="city.valid || city.pristine"
+              class="alert alert-danger">
+              City is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" required
+        [(ngModel)]="company.state" name="state" #state="ngModel">
+        <div [hidden]="state.valid || state.pristine"
+              class="alert alert-danger">
+              State is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="CUIT">CUIT</label>
+        <input type="text" class="form-control" id="CUIT" required
+        [(ngModel)]="company.CUIT" name="CUIT" #CUIT="ngModel">
+        <div [hidden]="CUIT.valid || CUIT.pristine"
+              class="alert alert-danger">
+              CUIT is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="IVAConditionID">IVAConditionID</label>
+        <input type="text" class="form-control" id="IVAConditionID" required
+        [(ngModel)]="company.IVAConditionID" name="IVAConditionID" #IVAConditionID="ngModel">
+        <div [hidden]="IVAConditionID.valid || IVAConditionID.pristine"
+              class="alert alert-danger">
+              IVAConditionID is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="IIBNumber">IIB</label>
+        <input type="number" class="form-control" id="IIBNumber" required
+        [(ngModel)]="company.IIBNumber" name="IIBNumber" #IIBNumber="ngModel">
+        <div [hidden]="IIBNumber.valid || IIBNumber.pristine"
+             class="alert alert-danger">
+             IIB is required
+        </div>
+      </div>
+
+       <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+        <button type="button" class="btn btn-dark" (click)="update()" [disabled]="!detailCompanyForm.form.valid">Update</button>
+        <button type="button" class="btn btn-dark" (click)="delete()">Delete</button>
+	    </div>
+    </form>
+</div>
+ 
+<div [hidden]="!submitted">
+    <p>{{message}}</p>
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    </div>
+</div>

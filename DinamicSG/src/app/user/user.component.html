@@ -1,0 +1,6 @@
+<h5>All Users</h5>
+<div *ngFor="let user of users; let rowIndex=index">
+  <a [routerLink]="['/user', user._id]" style="color:black">
+    <span class="badge badge-dark">{{rowIndex + 1}}</span> -> {{user.name}}
+  </a> 
+</div>

@@ -36,8 +36,8 @@ mongoose.connect(dbConfig.url)
       }
       
       console.log('Users collection removed');
-      // -> initial new data
-      initialUsers();
+  //     // -> initial new data
+       initialUsers();
    });
 
 }).catch(err => {
@@ -110,16 +110,17 @@ function initialUsers(){
       image: "2133",
       email: "fasdfsda",
       password: "masita",
-      confirmation: True,
+      confirmation: false,
       created_at: "2019-01-01"
     }
-  ]
+  ];
+ 
  
   // Init data -> save to MongoDB
 
   for (let i = 0; i < users.length; i++) { 
-      const company = new Users(users[i]);
-      company.save();
+      const user = new Users(users[i]);
+      user.save();
   }
 
   console.log(">>> Done - Users - Initial Data!");
